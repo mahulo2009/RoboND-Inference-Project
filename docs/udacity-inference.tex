@@ -2,7 +2,11 @@
 
 \usepackage[pdftex]{graphicx}    
 \usepackage{cite}
+\usepackage{listings}
+\usepackage{subcaption} 
+\usepackage{dirtree}
 \hyphenation{op-tical net-works semi-conduc-tor}
+\graphicspath{ {../images/} }
 
 
 \begin{document}
@@ -14,7 +18,7 @@
 \IEEEtitleabstractindextext{%
 	
 \begin{abstract}
-This project contains two parts. In the first part of the project a data set is provided and a neural network must be trained in order to achieve an inference time less than 10 ms and accuracy greater than 75\%. In the second part of the project an original idea for a robotic inference system must be selected. Then the data must be collected and a network trained. The project selected, identifying coins and classifying them, has been taking in account that in a robotic system we want to perceive the world, make a decision based on that perception and them act upon this decision. The neural network can be used to automate the process of counting  coins.
+This project consists of two parts. In the first part of the project a data set is provided, and a neural network must be trained in order to achieve an inference time less than 10 ms and accuracy greater than 75\%. In the second part of the project an original idea for a robotic inference system must be selected; Them the data must be collected and a network trained. The project selected, identify and classify coins, has been taking into account that, in a robotic system we want to perceive the world, make a decision based on that perception, and them act upon this decision. The neural network may have several real world applications: automate the process of counting coins, help blind people in everyday situations and so on.
 \end{abstract}
 
 
@@ -28,28 +32,128 @@ inference project, udacity, deep learning.
 \IEEEpeerreviewmaketitle
 \section{Introduction}
 \label{sec:introduction}
-	
-	
-\IEEEPARstart{T}{he} field of robotics has evolved during the last decades. During the industrial revolution, the robots that were manufactured could operate repetitively with high precision. The current robots can move around the scene detecting automatically obstacles and reacting in real time to changes in the environment. The flexibility needed for the new era of robots can be beneficed of the neural networks applied to image classification or semantic segmentation. By using this techniques a trained robot can rapidly identify objects in the scene and react accordantly.  It is not only provided with sensors to avoid obstacles, it can detect object in the scene, classified them, and to make decision bases on this classifications.
+\IEEEPARstart{T}{he} field of robotics has evolved during the last decades. During the industrial revolution, the robots that were manufactured could operate repetitively with high precision. The current robots can move around the scene detecting automatically obstacles and reacting in real time to changes in the environment. The flexibility needed for the new era of robots can be beneficed of the neural networks applied to image classification or semantic segmentation. By using these techniques a trained robot can rapidly identify objects in the scene and react accordantly.  It is not only provided with sensors to avoid obstacles, it can detect object in the scene, classified them, and to make decision bases on this classification.
 
-A lot of effort to provide the robots these capabilities came from collecting data to train the neural network and to define the network architecture itself. In the present work an example, classify coins, have been selected in order to evaluate the data collection process and the architecture selection an final verification.
+In addition, the use of neural network can be extended to days basis. Nowadays, a lot of people posses a mobile with the capabilities to carry on inference task. The range for applications that can be developed for these platforms is huge with the only limitation of the imagination.
 
+A lot of effort to provide the robots these capabilities cames from collecting data to train the neural network and to define the network architecture itself. In the present work an example, classify coins, have been selected in order to evaluate the data collection process and the architecture selection and finally, to do the verification.
 	
 \section{Background / Formulation}
 
+The original idea selected was identified a coin in an image and to classify the coin, three different kinds of classes were used, corresponding to the European coins of 10 cents, 20 cents and one euro. In order to classify the coin a two-step strategy have been used. In the first step a classic feature extraction algorithm has been used. Due to the coins to be classified share a circular shape, the Hough Transform was used to find the coins in the image, classified them depending on the position in the image. The second step will use the inference, after training the network, to classify new images not seen before. The idea is to extract the region of the image corresponding to the coin and to inject this image as the input of the neural network.
 
-At this stage, you should begin diving into the technical details of your approach by explaining to the reader how parameters were defined, what type of network was chosen, and the reasons these items were performed. This should be factual and authoritative, meaning you should not use language such as “I think this will work” or “Maybe a network with this architecture is better..”. Instead, focus on items similar to, ”A 3-layer network architecture was chosen with X, Y, and Z parameters” 
-Explain why you chose the network you did for the supplied data set and then why you chose the network used for your robotic inference project. \cite{lamport1994latex}
+It must be noticed that this is not a limitation for the real system, when trying to inference new samples, since the Hough Transform will be just used in this context to extract the portion of the image relative to the coin, and the neural network will inference the exact class for this new sample. 
+
+In addition, the principal advantage for this strategy is that the background of the image is not a problem during classification, because it is extracted, making this network quite robust to different environments.
+
+The network selected was AlexNet because the dataset was composed of colour image and the size 256x256 fits the image data set.
 		
 \section{Data Acquisition}
-This section should discuss the data set. Items to include are the number of images, size of the images, the types of images (RGB, Grayscale, etc.), how these images were collected (including the method). Providing this information is critical if anyone would like to replicate your results. After all, the intent of reports such as these are to convey information and build upon ideas so you want to ensure others can validate your process.
-Justifying why you gathered data in this way is a helpful point, but sometimes this may be omitted here if the problem has been stated clearly in the introduction.
-It is a great idea here to have at least one or two images showing what your data looks like for the reader to visualize.
+
+The data set was collected using the camera of a mobile phone. The coins were put on a white paper and a video recording was started. Every few seconds the recording was paused to turn the coin randomly. Then, a tool to extract individual images from the video, ffmpeg, was used. The image were stored in jpeg format with a size of 1920x1080 pixels. A total of 2900 images, approximately were collected.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.10]{inference-raw}
+\caption{Example of raw image coming from the mobile camera.}
+\label{fig:figure1}
+\end{figure}
+
+A python script was created to take every image and, using the Hough Transform, extract the coins from the images. The individual images were safe in directories with the name of the classes, in this case : coin10, coin20 and con100.
+
+These images where down-sampled. The final image size, the ones used to train the network, was 256x256 pixels. The single images for every class was safe with the following directory structure:
+
+\dirtree{%
+.1 data.
+.2 coin10.
+.3 coin-10-image-1.jpg.
+.3 coin-10-image-2.jpg.
+.2 coin20.
+.3 coin-20-image-1.jpg.
+.3 coin-20-image-2.jpg.
+.2 coin100.
+.3 coin-100-image-1.jpg.
+.3 coin-100-image-2.jpg.
+}
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.15\textwidth}
+\includegraphics[scale=0.3]{output_0010_0}
+\caption{10 cents}
+\end{subfigure}
+\begin{subfigure}[b]{0.15\textwidth}
+\includegraphics[scale=0.3]{output_0005_1}
+\caption{20 cents}
+\end{subfigure}
+\begin{subfigure}[b]{0.15\textwidth}
+\includegraphics[scale=0.3]{output_0001_2}
+\caption{1 euro}
+\end{subfigure}
+\label{fig:figure2}
+\caption{Example images coin extracted using Hough Transform.}
+\end{figure}
+
+
+\section{Neural Network Trainning}
+
+Digits tools was used to train the network. The process of training the network in digits takes two steps:
+
+\subsection{Create the Model}
+
+In the first step the model from the data set, classification type, was created. The following parameters were selected:
+
+\begin{itemize}
+\item Image type[Color]: color is a  3-channel RGB iamge.
+\item Image size(Width x Height) [256,256]: the image input will be resize to this value. Since the original image was already of this size, resizing will not take place.
+\item Trainning Image: the folder with the structure describe in the previous section. 
+\item \%for validation[25\%]: the percent of image to set apart for the validation process.
+\item \%for testing[10\%]: the percent of image to set apart for the test process.
+\item DatasetName[coin\-dataset]: the name of the dataset for future references.
+\end{itemize}
+
+\subsection{Create the Network}
+
+The following step the consists in training the network. A classification network was selected with the following parameters:
+
+\begin{itemize}
+\item Select Dataset[coin\-dataset]: the previous created dataset.
+\item Training epochs[10]: how many passes throught the training data.
+\item Standard Network[GoogLeNet]: the predefined network achitecture.
+\end{itemize}
+
+
+
+\subsection{Train the Network}
+
+The network was trained with the model and network architecture previously defined.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{trainning-chart}
+\caption{Trainnig chart.}
+\label{fig:figure3}
+\end{figure}
+
+After trainning the network a subset of the image reserved to test the result were  with the following output:
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{trainning-validation}
+\caption{Trainnig chart.}
+\label{fig:figure3}
+\end{figure}
+
+
 
 \section{Results}
+
+
+
 This is typically the hardest part of the report for many. You want to convey your results in an unbiased fashion. If you results are good, you can objectively note this. Similarly, you may do this if they are bad as well. You do not want to justify your results here with discussion; this is a topic for the next session. 
 Present the results of your robotics project model and the model you used for the supplied data with the appropriate accuracy and inference time
 For demonstrating your results, it is incredibly useful to have some charts, tables, and/or graphs for the reader to review. This makes ingesting the information quicker and easier.
+
 
 \section{Discussion}
 This is the only section of the report where you may include your opinion. However, make sure your opinion is based on facts. If your results are poor, make mention of what may be the underlying issues. If the results are good, why do you think this is the case? Again, avoid writing in the first person (i.e. Do not use words like “I” or “me”). If you really find yourself struggling to avoid the word “I” or “me”; sometimes, this can be avoid with the use of the word “one”. As an example: instead of : “I think the accuracy on my dataset is low because the images are too small to show the necessary detail” try: “one may believe the accuracy on the dataset is low because the images are too small to show the necessary detail”. They say the same thing, but the second avoids the first person. 
