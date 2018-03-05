@@ -126,20 +126,11 @@ The following step the consists in training the network. A classification networ
 
 \subsection{Train the Network}
 
-The network was trained with the model and network architecture previously defined.
+The network was trained with the model and network architecture previously defined using the digits platform.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.3]{trainning-chart}
-\caption{Trainnig chart.}
-\label{fig:figure3}
-\end{figure}
-
-After trainning the network a subset of the image reserved to test the result were  with the following output:
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.2]{trainning-validation}
 \caption{Trainnig chart.}
 \label{fig:figure3}
 \end{figure}
@@ -149,19 +140,34 @@ After trainning the network a subset of the image reserved to test the result we
 \section{Results}
 
 
+After training the network a subset of the image reserved to test the result with the following output:
 
-This is typically the hardest part of the report for many. You want to convey your results in an unbiased fashion. If you results are good, you can objectively note this. Similarly, you may do this if they are bad as well. You do not want to justify your results here with discussion; this is a topic for the next session. 
-Present the results of your robotics project model and the model you used for the supplied data with the appropriate accuracy and inference time
-For demonstrating your results, it is incredibly useful to have some charts, tables, and/or graphs for the reader to review. This makes ingesting the information quicker and easier.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{confusion-matrix}
+\caption{Confusion Matrix.}
+\label{fig:figure4}
+\end{figure}
 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{classification-all}
+\caption{Classification result of the network for testing images.}
+\label{fig:figure5}
+\end{figure}
+
+The results of the classification were really good. 
 
 \section{Discussion}
-This is the only section of the report where you may include your opinion. However, make sure your opinion is based on facts. If your results are poor, make mention of what may be the underlying issues. If the results are good, why do you think this is the case? Again, avoid writing in the first person (i.e. Do not use words like “I” or “me”). If you really find yourself struggling to avoid the word “I” or “me”; sometimes, this can be avoid with the use of the word “one”. As an example: instead of : “I think the accuracy on my dataset is low because the images are too small to show the necessary detail” try: “one may believe the accuracy on the dataset is low because the images are too small to show the necessary detail”. They say the same thing, but the second avoids the first person. 
-Reflect on which is more important, inference time or accuracy, in regards to your robotic inference project.
-		
+
+One of the key things to obtain good result was to have a big number of samples. In addition, the image extraction, using a Hough Transform, helped to train the network. Once the network was trained it can be easily deployed in to a mobile and to be used in many different kind of applications.
+
+	
 \section{Conclusion / Future work}
-This section is intended to summarize your report. Your summary should include a recap of the results, did this project achieve what you attempted, and is this a commercially viable product? 
-For Future work,address areas of work that you may not have addressed in your report as possible next steps. For future work, this could be due to time constraints, lack of currently developed methods / technology, and areas of application outside of your current implementation. Again, avoid the use of the first-person.
+
+The accuracy of the classification process achieved was really good. Due to time constraints the classes consists only in three coin and the same side. The final number of the classes is quite bigger than that. There are eight euros coins with two side each. One of the size is common for all the European countries but the other side is country specific. This makes the process of gathering the samples more difficult and time consuming. Once the network is trained with all the coin types and size a mobile application can be used to inference the coins in the day basis. The fact that the background is extracted will make this network quite robots again different environments: coins spread out over a pub's bar or over a counter in a book store.
+
 		
 \bibliography{bib}
 \bibliographystyle{ieeetr}
