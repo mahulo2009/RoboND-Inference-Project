@@ -18,7 +18,7 @@
 \IEEEtitleabstractindextext{%
 	
 \begin{abstract}
-This project consists of two parts. In the first part of the project a data set is provided, and a neural network must be trained in order to achieve an inference time less than 10 ms and accuracy greater than 75\%. In the second part of the project an original idea for a robotic inference system must be selected; Them the data must be collected and a network trained. The project selected, identify and classify coins, has been taking into account that, in a robotic system we want to perceive the world, make a decision based on that perception, and them act upon this decision. The neural network may have several real world applications: automate the process of counting coins, help blind people in everyday situations and so on.
+This project consists of two parts. In the first part of the project a data set is provided, and a Neural Network must be trained in order to achieve an inference time less than 10 ms and accuracy greater than 75\%. In the second part of the project an original idea for a robotic inference system must be selected; them the data must be collected and a network trained. The project selected, identify and classify coins, has been taking into account that, in a robotic system we want to perceive the world, make a decision based on that perception, and them act upon this decision. The Neural Network may have several real world applications: automate the process of counting coins, help blind people in everyday situations and so on.
 \end{abstract}
 
 
@@ -36,7 +36,7 @@ inference project, udacity, deep learning.
 
 In addition, the use of neural network can be extended to days basis. Nowadays, a lot of people posses a mobile with the capabilities to carry on inference task. The range for applications that can be developed for these platforms is huge with the only limitation of the imagination.
 
-A lot of effort to provide the robots these capabilities cames from collecting data to train the neural network and to define the network architecture itself. In the present work an example, classify coins, have been selected in order to evaluate the data collection process and the architecture selection and finally, to do the verification.
+A lot of effort to provide the robots these capabilities cames from collecting data to train the Neural Network and to define the network architecture itself. In the present work an example, classify coins, have been selected in order to evaluate the data collection process and the architecture selection and finally, to do the verification.
 	
 \section{Background / Formulation}
 
@@ -46,7 +46,7 @@ It must be noticed that this is not a limitation for the real system, when tryin
 
 In addition, the principal advantage for this strategy is that the background of the image is not a problem during classification, because it is extracted, making this network quite robust to different environments.
 
-The network selected was AlexNet because the dataset was composed of colour image and the size 256x256 fits the image data set.
+The network selected was AlexNet because the dataset was composed of colour image and the size 256x256 fits the image data set. \cite{udacity} \cite{deeplearning}
 		
 \section{Data Acquisition}
 
@@ -97,9 +97,46 @@ These images where down-sampled. The final image size, the ones used to train th
 
 \section{Neural Network Trainning}
 
-Digits tools was used to train the network. The process of training the network in digits takes two steps:
+Digits tools was used to train the network. The process of training the network in digits takes two steps. The following section show the configuration for both networks: the train the dataset provided by udaciy and the original idea.
 
-\subsection{Create the Model}
+\subsection{Udacity}
+\subsubsection{Create the Model}
+
+In the first step the model from the data set, classification type, was created. The following parameters were selected:
+
+\begin{itemize}
+\item Image type[Color]: color is a  3-channel RGB iamge.
+\item Image size(Width x Height) [256,256]: the image input will be resize to this value. 
+\item Trainning Image: the folder with the structure as provided by udacity.
+\item \%for validation[25\%]: the percent of image to set apart for the validation process.
+\item \%for testing[5\%]: the percent of image to set apart for the test process.
+\item DatasetName[udacity\-dataset]: the name of the dataset for future references.
+\end{itemize}
+
+\subsubsection{Create the Network}
+
+The following step the consists in training the network. A classification network was selected with the following parameters:
+
+\begin{itemize}
+\item Select Dataset[udacity\-dataset]: the previous created dataset.
+\item Training epochs[5]: how many passes throught the training data.
+\item Standard Network[GoogLeNet]: the predefined network achitecture.
+\end{itemize}
+
+\subsubsection{Train the Network}
+
+The network was trained with the model and network architecture previously defined using the digits platform.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{trainning-chart}
+\caption{Trainnig chart Udacity.}
+\label{fig:figure3}
+\end{figure}
+
+
+\subsection{Original Idea}
+\subsubsection{Create the Model}
 
 In the first step the model from the data set, classification type, was created. The following parameters were selected:
 
@@ -112,33 +149,41 @@ In the first step the model from the data set, classification type, was created.
 \item DatasetName[coin\-dataset]: the name of the dataset for future references.
 \end{itemize}
 
-\subsection{Create the Network}
+\subsubsection{Create the Network}
 
 The following step the consists in training the network. A classification network was selected with the following parameters:
 
 \begin{itemize}
 \item Select Dataset[coin\-dataset]: the previous created dataset.
-\item Training epochs[10]: how many passes throught the training data.
+\item Training epochs[5]: how many passes throught the training data.
 \item Standard Network[GoogLeNet]: the predefined network achitecture.
 \end{itemize}
 
-
-
-\subsection{Train the Network}
+\subsubsection{Train the Network}
 
 The network was trained with the model and network architecture previously defined using the digits platform.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.3]{trainning-chart}
-\caption{Trainnig chart.}
+\includegraphics[scale=0.3]{trainning-chart-udacity}
+\caption{Trainnig chart original idea.}
 \label{fig:figure3}
 \end{figure}
 
-
-
 \section{Results}
 
+\subsection{Udacity}
+
+After training the network the result was evaluated, the result is on requirements.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{udacity-evaluate}
+\caption{Evaluation of the model udacity.}
+\label{fig:figure4}
+\end{figure}
+
+\subsection{Original Idea}
 
 After training the network a subset of the image reserved to test the result with the following output:
 
@@ -146,7 +191,7 @@ After training the network a subset of the image reserved to test the result wit
 \centering
 \includegraphics[scale=0.2]{confusion-matrix}
 \caption{Confusion Matrix.}
-\label{fig:figure4}
+\label{fig:figure5}
 \end{figure}
 
 
@@ -154,7 +199,7 @@ After training the network a subset of the image reserved to test the result wit
 \centering
 \includegraphics[scale=0.2]{classification-all}
 \caption{Classification result of the network for testing images.}
-\label{fig:figure5}
+\label{fig:figure6}
 \end{figure}
 
 The results of the classification were really good. 
@@ -168,9 +213,19 @@ One of the key things to obtain good result was to have a big number of samples.
 
 The accuracy of the classification process achieved was really good. Due to time constraints the classes consists only in three coin and the same side. The final number of the classes is quite bigger than that. There are eight euros coins with two side each. One of the size is common for all the European countries but the other side is country specific. This makes the process of gathering the samples more difficult and time consuming. Once the network is trained with all the coin types and size a mobile application can be used to inference the coins in the day basis. The fact that the background is extracted will make this network quite robots again different environments: coins spread out over a pub's bar or over a counter in a book store.
 
-		
-\bibliography{bib}
+
+\begin{thebibliography}{9}
 \bibliographystyle{ieeetr}
+
+\bibitem{udacity} 
+https://eu.udacity.com
+\textit{Robotics Software Engineer Nanodegree program}. 
+
+\bibitem{deeplearning} 
+Adit Deshpande
+\textit{The 9 Deep Learning Papers You Need To Know About}. 
+
+\end{thebibliography}
 		
 \end{document}
 	

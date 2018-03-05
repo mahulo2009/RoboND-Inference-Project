@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2018.2.26)  5 MAR 2018 09:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2018.2.26)  5 MAR 2018 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -252,7 +252,11 @@ Package: dirtree 2012/12/11 v0.32 package wrapper for dirtree
 \DT@baselineskip=\dimen148
 )
 File: dirtree.tex 2012/12/11 v0.32 `dirtree' (jcc)
-) (./udacity-inference.aux)
+) (./udacity-inference.aux
+
+LaTeX Warning: Label `fig:figure3' multiply defined.
+
+)
 \openout1 = `udacity-inference.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -349,79 +353,94 @@ Package pdftex.def Info: ../images/output_0001_2.jpg used on input line 90.
 (pdftex.def)             Requested size: 77.0886pt x 77.0886pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 102.
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 107
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 108
 .
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9.53561> on input line 107.
+(Font)              <9.53561> on input line 108.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6.6749> on input line 107.
+(Font)              <6.6749> on input line 108.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.7678> on input line 107.
+(Font)              <4.7678> on input line 108.
 
-Underfull \hbox (badness 1735) in paragraph at lines 120--121
-[]\OT1/ppl/m/n/9.53561 Select Dataset[coin-dataset]: the pre-vi-ous cre-ated
+Underfull \hbox (badness 4699) in paragraph at lines 113--114
+[]\OT1/ppl/m/n/9.53561 DatasetName[udacity-dataset]: the name of the
  []
 
 <../images/trainning-chart.png, id=16, 676.5275pt x 470.75874pt>
 File: ../images/trainning-chart.png Graphic file (type png)
 
 <use ../images/trainning-chart.png>
-Package pdftex.def Info: ../images/trainning-chart.png used on input line 133.
+Package pdftex.def Info: ../images/trainning-chart.png used on input line 132.
 (pdftex.def)             Requested size: 202.95981pt x 141.22871pt.
 
-<../images/confusion-matrix.png, id=17, 1055.945pt x 150.5625pt>
+Underfull \hbox (badness 1735) in paragraph at lines 157--158
+[]\OT1/ppl/m/n/9.53561 Select Dataset[coin-dataset]: the pre-vi-ous cre-ated
+ []
+
+<../images/trainning-chart-udacity.png, id=17, 752.8125pt x 519.9425pt>
+File: ../images/trainning-chart-udacity.png Graphic file (type png)
+
+<use ../images/trainning-chart-udacity.png>
+Package pdftex.def Info: ../images/trainning-chart-udacity.png used on input li
+ne 168.
+(pdftex.def)             Requested size: 225.84549pt x 155.98395pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<../images/udacity-evaluate.png, id=18, 748.7975pt x 465.74pt>
+File: ../images/udacity-evaluate.png Graphic file (type png)
+
+<use ../images/udacity-evaluate.png>
+Package pdftex.def Info: ../images/udacity-evaluate.png used on input line 181.
+
+(pdftex.def)             Requested size: 149.75684pt x 93.14635pt.
+ [2 <../images/output_0010_0.jpg> <../images/output_0005_1.jpg> <../images/outp
+ut_0001_2.jpg> <../images/trainning-chart.png>] <../images/confusion-matrix.png
+, id=26, 1055.945pt x 150.5625pt>
 File: ../images/confusion-matrix.png Graphic file (type png)
 
 <use ../images/confusion-matrix.png>
-Package pdftex.def Info: ../images/confusion-matrix.png used on input line 147.
+Package pdftex.def Info: ../images/confusion-matrix.png used on input line 192.
 
 (pdftex.def)             Requested size: 211.18526pt x 30.11195pt.
 
-<../images/classification-all.png, id=18, 1056.94875pt x 605.26125pt>
+<../images/classification-all.png, id=27, 1056.94875pt x 605.26125pt>
 File: ../images/classification-all.png Graphic file (type png)
 
 <use ../images/classification-all.png>
-Package pdftex.def Info: ../images/classification-all.png used on input line 15
-5.
+Package pdftex.def Info: ../images/classification-all.png used on input line 20
+0.
 (pdftex.def)             Requested size: 211.386pt x 121.0501pt.
- [2 <../images/output_0010_0.jpg> <../images/output_0005_1.jpg> <../images/outp
-ut_0001_2.jpg> <../images/trainning-chart.png> <../images/confusion-matrix.png>
- <../images/classification-all.png>]
-(./udacity-inference.bbl
+ [3 <../images/trainning-chart-udacity.png> <../images/udacity-evaluate.png> <.
+./images/confusion-matrix.png> <../images/classification-all.png>] (./udacity-i
+nference.aux)
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+LaTeX Warning: There were multiply-defined labels.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 \end{thebibliography}
-                         
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) [3
-
-] (./udacity-inference.aux) ) 
+ ) 
 Here is how much of TeX's memory you used:
- 4592 strings out of 493030
- 74810 string characters out of 6136260
+ 4608 strings out of 493030
+ 75218 string characters out of 6136260
  144403 words of memory out of 5000000
- 8097 multiletter control sequences out of 15000+600000
- 42865 words of font info for 92 fonts, out of 8000000 for 9000
+ 8110 multiletter control sequences out of 15000+600000
+ 46082 words of font info for 96 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  42i,8n,40p,787b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/bas
-e/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-zapfding/uzdr.pfb>
-Output written on udacity-inference.pdf (3 pages, 497531 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/hel
+vetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on udacity-inference.pdf (3 pages, 652622 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 63 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
