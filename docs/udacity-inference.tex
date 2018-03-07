@@ -227,9 +227,15 @@ The results of the classification were really good.
 
 \section{Discussion}
 
-One of the key things to obtain good result was to have a big number of samples. In addition, the image extraction, using a Hough Transform, helped to train the network. Once the network was trained it can be easily deployed in to a mobile and to be used in many different kind of applications.
+It has been notice during the development of this project the importance of the data collection process. In order to have a good accuracy is quite important to have a big number of samples of every class. The process of acquiring these images can be a complex and time-consuming task. The background where the object were collected is also part of the acquisition problem. In this project a mix solution, using traditional image processing techniques, Hough Transform, was used to overcame this problem. The final accuracy obtained was quite good. 
 
+There are some parameters that must be taken in account depending on the final deployed hardware and the desire performance:accuracy, inference time, power consumption, memory use.\cite{analysisdnn}
 
+There are relation between these parameters. For example,there are a hyperbolic relationship between the accuracy and inference time, in order to have a small increase in the accuracy the inference time will increase following a hyperbolic curve. 
+
+For that reason the network architecture must be selected taking in consideration the specific requirements for the concrete application. Furthermore, due to the possible limitations of the hardware where the solution will be deployed, and taking in consideration the frame per seconds to be inference and the accuracy desire, the correct network architecture must be selected. 
+
+In this project GoogleNet was selected due that the solution for both Udacity model and own model was on requirements. Furthermore, due to the possible limitations 
 
 	
 \section{Conclusion / Future work}
