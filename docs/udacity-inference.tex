@@ -40,17 +40,60 @@ A lot of effort to provide the robots these capabilities cames from collecting d
 	
 \section{Background / Formulation}
 
-The original idea selected was identified a coin in an image and to classify the coin, three different kinds of classes were used, corresponding to the European coins of 10 cents, 20 cents and one euro. In order to classify the coin a two-step strategy have been used. In the first step a classic feature extraction algorithm has been used. Due to the coins to be classified share a circular shape, the Hough Transform was used to find the coins in the image, classified them depending on the position in the image. The second step will use the inference, after training the network, to classify new images not seen before. The idea is to extract the region of the image corresponding to the coin and to inject this image as the input of the neural network.
+\subsection{Udacity}
 
-It must be noticed that this is not a limitation for the real system, when trying to inference new samples, since the Hough Transform will be just used in this context to extract the portion of the image relative to the coin, and the neural network will inference the exact class for this new sample. 
+The data set, provided by Udacity, to be classified by the Neural Network consists of a collection of objects of three types: candy boxes, bottles and nothing.
 
-In addition, the principal advantage for this strategy is that the background of the image is not a problem during classification, because it is extracted, making this network quite robust to different environments.
+GoogleNet network was selected for several reasons \cite{analysisdnn}:
+
+\begin{enumerate}
+\item The image size fits well with one required by the network.
+\item The network gives a good accuracy.
+\item The number of operations, that is related to the inference time, is around 3 G-ops.
+\end{enumerate}
+
+
+A classification network was selected with the following parameters:
+
+\begin{itemize}
+	\item Training epochs[5]: how many passes throught the training data.
+	\item Standard Network[GoogLeNet]: the predefined network achitecture.
+\end{itemize}
+
+
+\subsection{Original Idea}
+
+The original idea selected was identified a coin in an image and to classify the coin, three different kinds of classes were used, corresponding to the European coins of 10 cents, 20 cents and one Euro.
+
+GoogleNet network was selected for several reasons \cite{analysisdnn}:
+
+\begin{enumerate}
+	\item The image size fits well with one required by the network.
+	\item The network gives a good accuracy with a reasonable inference time.
+	\item The network uses color image. For the Euros to be identify it is quite useful.
+	\item The number of operations, that is related to the inference time, is around 3 G-ops.
+\end{enumerate}
+\cite{analysisdnn}
+
+The following step the consists in training the network. A classification network was selected with the following parameters:
+
+\begin{itemize}
+	\item Training epochs[5]: how many passes throught the training data.
+	\item Standard Network[GoogLeNet]: the predefined network achitecture.
+\end{itemize}
 
 The network selected was AlexNet because the dataset was composed of colour image and the size 256x256 fits the image data set. \cite{udacity} \cite{deeplearning}
 		
 \section{Data Acquisition}
 
 The data set was collected using the camera of a mobile phone. The coins were put on a white paper and a video recording was started. Every few seconds the recording was paused to turn the coin randomly. Then, a tool to extract individual images from the video, ffmpeg, was used. The image were stored in jpeg format with a size of 1920x1080 pixels. A total of 2900 images, approximately were collected.
+
+In order to classify the coin a two-step strategy have been used. In the first step a classic feature extraction algorithm has been used. Due to the coins to be classified share a circular shape, the Hough Transform was used to find the coins in the image, classified them depending on the position in the image. The second step will use the inference, after training the network, to classify new images not seen before. The idea is to extract the region of the image corresponding to the coin and to inject this image as the input of the neural network.
+
+It must be noticed that this is not a limitation for the real system, when trying to inference new samples, since the Hough Transform will be just used in this context to extract the portion of the image relative to the coin, and the neural network will inference the exact class for this new sample. 
+
+In addition, the principal advantage for this strategy is that the background of the image is not a problem during classification, because it is extracted, making this network quite robust to different environments.
+
 
 \begin{figure}[h]
 \centering
@@ -113,16 +156,6 @@ In the first step the model from the data set, classification type, was created.
 \item DatasetName[udacity\-dataset]: the name of the dataset for future references.
 \end{itemize}
 
-\subsubsection{Create the Network}
-
-The following step the consists in training the network. A classification network was selected with the following parameters:
-
-\begin{itemize}
-\item Select Dataset[udacity\-dataset]: the previous created dataset.
-\item Training epochs[5]: how many passes throught the training data.
-\item Standard Network[GoogLeNet]: the predefined network achitecture.
-\end{itemize}
-
 \subsubsection{Train the Network}
 
 The network was trained with the model and network architecture previously defined using the digits platform.
@@ -147,16 +180,6 @@ In the first step the model from the data set, classification type, was created.
 \item \%for validation[25\%]: the percent of image to set apart for the validation process.
 \item \%for testing[10\%]: the percent of image to set apart for the test process.
 \item DatasetName[coin\-dataset]: the name of the dataset for future references.
-\end{itemize}
-
-\subsubsection{Create the Network}
-
-The following step the consists in training the network. A classification network was selected with the following parameters:
-
-\begin{itemize}
-\item Select Dataset[coin\-dataset]: the previous created dataset.
-\item Training epochs[5]: how many passes throught the training data.
-\item Standard Network[GoogLeNet]: the predefined network achitecture.
 \end{itemize}
 
 \subsubsection{Train the Network}
@@ -225,6 +248,9 @@ https://eu.udacity.com
 Adit Deshpande
 \textit{The 9 Deep Learning Papers You Need To Know About}. 
 
+\bibitem{analysisdnn} 
+Alfredo Canziani, Eugenio Culurciello,Adam Paszke  
+\textit{An analysis of deep neural network models for practical applications}. 
 \end{thebibliography}
 		
 \end{document}

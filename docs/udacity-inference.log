@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2018.2.26)  5 MAR 2018 10:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2018.2.20)  6 MAR 2018 01:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **udacity-inference.tex
 (./udacity-inference.tex
-LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 77 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
@@ -24,7 +24,7 @@ File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 -- Using IEEE Computer Society mode.
 -- Using 8.5in x 11in (letter) paper.
--- Using DVI output.
+-- Using PDF output.
 \@IEEEnormalsizeunitybaselineskip=\dimen105
 -- This is a 10 point document.
 \CLASSINFOnormalsizebaselineskip=\dimen106
@@ -124,45 +124,31 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks15
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 95.
+Package graphics Info: Driver file: pdftex.def on input line 96.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-
-! Package pdftex.def Error: PDF mode expected, but DVI mode detected!
-(pdftex.def)                If you are using `latex', then call `pdflatex'.
-(pdftex.def)                Otherwise check and correct the driver options.
-(pdftex.def)                Error recovery by switching to PDF mode.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.433   }\@ehc
-              
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 \Gread@gobject=\count94
 ))
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
-) (/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
@@ -193,13 +179,13 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen132
 \captionmargin@=\dimen133
@@ -273,7 +259,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
 
 -- Lines per column: 61 (exact).
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count110
 \scratchdimen=\dimen149
@@ -286,12 +272,61 @@ LaTeX Font Info:    ... okay on input line 12.
 \MPnumerator=\count114
 \makeMPintoPDFobject=\count115
 \everyMPtoPDFconversion=\toks18
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 \c@lstlisting=\count116
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 30.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
@@ -314,19 +349,28 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 33.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 43.
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 59.
 
-<../images/inference-raw.png, id=1, 969.6225pt x 849.1725pt>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9.53561> on input line 59.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6.6749> on input line 59.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <4.7678> on input line 59.
+ [1{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+<../images/inference-raw.png, id=11, 969.6225pt x 849.1725pt>
 File: ../images/inference-raw.png Graphic file (type png)
 
 <use ../images/inference-raw.png>
-Package pdftex.def Info: ../images/inference-raw.png used on input line 57.
+Package pdftex.def Info: ../images/inference-raw.png used on input line 100.
 (pdftex.def)             Requested size: 96.96793pt x 84.92221pt.
- [1
-Non-PDF special ignored!{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 120.
 
-
- <../images/inference-raw.png>]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 77.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -335,36 +379,30 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 File: ../images/output_0010_0.jpg Graphic file (type jpg)
 
 <use ../images/output_0010_0.jpg>
-Package pdftex.def Info: ../images/output_0010_0.jpg used on input line 82.
+Package pdftex.def Info: ../images/output_0010_0.jpg used on input line 125.
 (pdftex.def)             Requested size: 77.0886pt x 77.0886pt.
 
 <../images/output_0005_1.jpg, id=14, 256.96pt x 256.96pt>
 File: ../images/output_0005_1.jpg Graphic file (type jpg)
 
 <use ../images/output_0005_1.jpg>
-Package pdftex.def Info: ../images/output_0005_1.jpg used on input line 86.
+Package pdftex.def Info: ../images/output_0005_1.jpg used on input line 129.
 (pdftex.def)             Requested size: 77.0886pt x 77.0886pt.
 
 <../images/output_0001_2.jpg, id=15, 256.96pt x 256.96pt>
 File: ../images/output_0001_2.jpg Graphic file (type jpg)
 
 <use ../images/output_0001_2.jpg>
-Package pdftex.def Info: ../images/output_0001_2.jpg used on input line 90.
+Package pdftex.def Info: ../images/output_0001_2.jpg used on input line 133.
 (pdftex.def)             Requested size: 77.0886pt x 77.0886pt.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 102.
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 103.
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 108
-.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9.53561> on input line 108.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6.6749> on input line 108.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.7678> on input line 108.
 
-Underfull \hbox (badness 4699) in paragraph at lines 113--114
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 146.
+
+Underfull \hbox (badness 4699) in paragraph at lines 156--157
 []\OT1/ppl/m/n/9.53561 DatasetName[udacity-dataset]: the name of the
  []
 
@@ -372,38 +410,31 @@ Underfull \hbox (badness 4699) in paragraph at lines 113--114
 File: ../images/trainning-chart.png Graphic file (type png)
 
 <use ../images/trainning-chart.png>
-Package pdftex.def Info: ../images/trainning-chart.png used on input line 132.
+Package pdftex.def Info: ../images/trainning-chart.png used on input line 165.
 (pdftex.def)             Requested size: 202.95981pt x 141.22871pt.
-
-Underfull \hbox (badness 1735) in paragraph at lines 157--158
-[]\OT1/ppl/m/n/9.53561 Select Dataset[coin-dataset]: the pre-vi-ous cre-ated
- []
-
-<../images/trainning-chart-udacity.png, id=17, 752.8125pt x 519.9425pt>
+ [2 <../images/inference-raw.png> <../images/output_0010_0.jpg> <../images/outp
+ut_0005_1.jpg> <../images/output_0001_2.jpg> <../images/trainning-chart.png>]
+<../images/trainning-chart-udacity.png, id=24, 752.8125pt x 519.9425pt>
 File: ../images/trainning-chart-udacity.png Graphic file (type png)
 
 <use ../images/trainning-chart-udacity.png>
 Package pdftex.def Info: ../images/trainning-chart-udacity.png used on input li
-ne 168.
+ne 191.
 (pdftex.def)             Requested size: 225.84549pt x 155.98395pt.
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<../images/udacity-evaluate.png, id=18, 748.7975pt x 465.74pt>
+<../images/udacity-evaluate.png, id=25, 748.7975pt x 465.74pt>
 File: ../images/udacity-evaluate.png Graphic file (type png)
 
 <use ../images/udacity-evaluate.png>
-Package pdftex.def Info: ../images/udacity-evaluate.png used on input line 181.
+Package pdftex.def Info: ../images/udacity-evaluate.png used on input line 204.
 
 (pdftex.def)             Requested size: 149.75684pt x 93.14635pt.
- [2 <../images/output_0010_0.jpg> <../images/output_0005_1.jpg> <../images/outp
-ut_0001_2.jpg> <../images/trainning-chart.png>] <../images/confusion-matrix.png
-, id=26, 1055.945pt x 150.5625pt>
+
+<../images/confusion-matrix.png, id=26, 1055.945pt x 150.5625pt>
 File: ../images/confusion-matrix.png Graphic file (type png)
 
 <use ../images/confusion-matrix.png>
-Package pdftex.def Info: ../images/confusion-matrix.png used on input line 192.
+Package pdftex.def Info: ../images/confusion-matrix.png used on input line 215.
 
 (pdftex.def)             Requested size: 211.18526pt x 30.11195pt.
 
@@ -411,23 +442,27 @@ Package pdftex.def Info: ../images/confusion-matrix.png used on input line 192.
 File: ../images/classification-all.png Graphic file (type png)
 
 <use ../images/classification-all.png>
-Package pdftex.def Info: ../images/classification-all.png used on input line 20
-0.
+Package pdftex.def Info: ../images/classification-all.png used on input line 22
+3.
 (pdftex.def)             Requested size: 211.386pt x 121.0501pt.
- [3 <../images/trainning-chart-udacity.png> <../images/udacity-evaluate.png> <.
-./images/confusion-matrix.png> <../images/classification-all.png>] (./udacity-i
-nference.aux)
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <../images/trainning-chart-udacity.png> <../images/udacity-evaluate.png> <..
+/images/confusion-matrix.png> <../images/classification-all.png>]
+(./udacity-inference.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4608 strings out of 493030
- 75218 string characters out of 6136260
- 144403 words of memory out of 5000000
- 8110 multiletter control sequences out of 15000+600000
+ 4975 strings out of 493069
+ 81952 string characters out of 6138222
+ 150656 words of memory out of 5000000
+ 8440 multiletter control sequences out of 15000+600000
  46082 words of font info for 96 fonts, out of 8000000 for 9000
- 1144 hyphenation exceptions out of 8191
+ 1140 hyphenation exceptions out of 8191
  42i,8n,40p,787b,398s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
@@ -437,7 +472,7 @@ vetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on udacity-inference.pdf (3 pages, 652622 bytes).
+Output written on udacity-inference.pdf (3 pages, 653603 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream
