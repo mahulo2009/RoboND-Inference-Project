@@ -42,13 +42,13 @@ A lot of effort to provide the robots these capabilities cames from collecting d
 
 \subsection{Udacity}
 
-The data set, provided by Udacity, to be classified by the Neural Network consists of a collection of objects of three types: candy boxes, bottles and nothing.
+The Udacity provided data set, to be classified by the Neural Network, consists of a collection of objects of three types: candy boxes, bottles and nothing.
 
 GoogleNet network was selected for several reasons \cite{analysisdnn}:
 
 \begin{enumerate}
 \item The image size fits well with one required by the network.
-\item The network gives a good accuracy.
+\item The network gives enough accuracy to pass requirements.
 \item The number of operations, that is related to the inference time, is around 3 G-ops.
 \end{enumerate}
 
@@ -73,20 +73,18 @@ GoogleNet network was selected for several reasons \cite{analysisdnn}:
 	\item The network uses color image. For the Euros to be identify it is quite useful.
 	\item The number of operations, that is related to the inference time, is around 3 G-ops.
 \end{enumerate}
-\cite{analysisdnn}
 
-The following step the consists in training the network. A classification network was selected with the following parameters:
+A classification network was selected with the following parameters:
 
 \begin{itemize}
 	\item Training epochs[5]: how many passes throught the training data.
 	\item Standard Network[GoogLeNet]: the predefined network achitecture.
 \end{itemize}
 
-The network selected was AlexNet because the dataset was composed of colour image and the size 256x256 fits the image data set. \cite{udacity} \cite{deeplearning}
 		
 \section{Data Acquisition}
 
-The data set was collected using the camera of a mobile phone. The coins were put on a white paper and a video recording was started. Every few seconds the recording was paused to turn the coin randomly. Then, a tool to extract individual images from the video, ffmpeg, was used. The image were stored in jpeg format with a size of 1920x1080 pixels. A total of 2900 images, approximately were collected.
+The data set was collected using the camera of a mobile phone. The coins were put on a white paper and a video recording was started. Every few seconds the recording was paused to turn the coin randomly. Then, a tool to extract individual images from the video, ffmpeg, was used. The image were stored in jpeg format with a size of 1920x1080 pixels. A total of 2900 images, approximately, were collected.
 
 In order to classify the coin a two-step strategy have been used. In the first step a classic feature extraction algorithm has been used. Due to the coins to be classified share a circular shape, the Hough Transform was used to find the coins in the image, classified them depending on the position in the image. The second step will use the inference, after training the network, to classify new images not seen before. The idea is to extract the region of the image corresponding to the coin and to inject this image as the input of the neural network.
 
@@ -97,12 +95,12 @@ In addition, the principal advantage for this strategy is that the background of
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.10]{inference-raw}
+\includegraphics[scale=0.08]{inference-raw}
 \caption{Example of raw image coming from the mobile camera.}
 \label{fig:figure1}
 \end{figure}
 
-A python script was created to take every image and, using the Hough Transform, extract the coins from the images. The individual images were safe in directories with the name of the classes, in this case : coin10, coin20 and con100.
+A python script was created to take every image and, using the Hough Transform, to extract the coins from the images. The individual images were safe in directories with the name of the classes, in this case : coin10, coin20 and con100.
 
 These images where down-sampled. The final image size, the ones used to train the network, was 256x256 pixels. The single images for every class was safe with the following directory structure:
 
@@ -122,15 +120,15 @@ These images where down-sampled. The final image size, the ones used to train th
 \begin{figure}[h]
 \centering
 \begin{subfigure}[b]{0.15\textwidth}
-\includegraphics[scale=0.3]{output_0010_0}
+\includegraphics[scale=0.25]{output_0010_0}
 \caption{10 cents}
 \end{subfigure}
 \begin{subfigure}[b]{0.15\textwidth}
-\includegraphics[scale=0.3]{output_0005_1}
+\includegraphics[scale=0.25]{output_0005_1}
 \caption{20 cents}
 \end{subfigure}
 \begin{subfigure}[b]{0.15\textwidth}
-\includegraphics[scale=0.3]{output_0001_2}
+\includegraphics[scale=0.25]{output_0001_2}
 \caption{1 euro}
 \end{subfigure}
 \label{fig:figure2}
@@ -148,8 +146,8 @@ Digits tools was used to train the network. The process of training the network 
 In the first step the model from the data set, classification type, was created. The following parameters were selected:
 
 \begin{itemize}
-\item Image type[Color]: color is a  3-channel RGB iamge.
-\item Image size(Width x Height) [256,256]: the image input will be resize to this value. 
+\item Image type[Color]: color is a  3-channel RGB image.
+\item Image size(Width x Height) [256,256]: the image input will be resized to this value. 
 \item Trainning Image: the folder with the structure as provided by udacity.
 \item \%for validation[25\%]: the percent of image to set apart for the validation process.
 \item \%for testing[5\%]: the percent of image to set apart for the test process.
@@ -174,7 +172,7 @@ The network was trained with the model and network architecture previously defin
 In the first step the model from the data set, classification type, was created. The following parameters were selected:
 
 \begin{itemize}
-\item Image type[Color]: color is a  3-channel RGB iamge.
+\item Image type[Color]: color is a  3-channel RGB image.
 \item Image size(Width x Height) [256,256]: the image input will be resize to this value. Since the original image was already of this size, resizing will not take place.
 \item Trainning Image: the folder with the structure describe in the previous section. 
 \item \%for validation[25\%]: the percent of image to set apart for the validation process.
@@ -188,7 +186,7 @@ The network was trained with the model and network architecture previously defin
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.3]{trainning-chart-udacity}
+\includegraphics[scale=0.25]{trainning-chart-udacity}
 \caption{Trainnig chart original idea.}
 \label{fig:figure3}
 \end{figure}
@@ -230,6 +228,8 @@ The results of the classification were really good.
 \section{Discussion}
 
 One of the key things to obtain good result was to have a big number of samples. In addition, the image extraction, using a Hough Transform, helped to train the network. Once the network was trained it can be easily deployed in to a mobile and to be used in many different kind of applications.
+
+
 
 	
 \section{Conclusion / Future work}
